@@ -1,5 +1,7 @@
 package com.cursosdedesarrollo.kotlin
 
+import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
+
 
 fun main(args : Array<String>) {
     var s = "Hello, world!\n"
@@ -27,5 +29,12 @@ fun main(args : Array<String>) {
 
     s = "abc"
     println("$s.length is ${s.length}") // prints "abc.length is 3"
+
+    var x="Hola"
+    if(x is String){
+        println(x.length)
+    }
+
+
 
 }

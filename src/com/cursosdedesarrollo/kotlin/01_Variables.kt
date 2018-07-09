@@ -12,6 +12,16 @@ fun main(args : Array<String>) {
     println(hexBytes)
     println(bytes)
 
+    val fecha = "29th March, 1709"
+    // fecha = "25th December, 1600" // no puede cambiar
+
+    var coche = "Toyota Matrix"
+    coche = "Mercedes-Maybach" // puede cambiar
+
+
+    var edad = 12
+    //edad = "12 años" // Error: no puede cambiar de tipo
+
     val a: Int = 10000
     println(a === a) // Prints 'true'
     val boxedA: Int = a
@@ -23,6 +33,39 @@ fun main(args : Array<String>) {
     val b2: Long = 0L + a2 // conversión explícita de variable
     //casting
     println(a2.toLong() == b2) // Surprise! This prints "false" as Long's equals() check for other part to be Long as well
+
+
+    val miInt = 55
+    val miLong = 40L
+    val miFloat = 34.43F
+    val miDouble = 45.78
+    val miHexadecimal = 0x0F
+    val miBinario = 0b010101
+
+    /*
+    var miInt3 = 987
+    val miLong2 = myInt3.toLong()
+    val cadena = "101"
+    miInt = cadena.toInt()
+    */
+    val miTrue = true
+    val miFalse = false
+
+    val miString = "This is a String"
+    val stringEscapada = "This is a string with new line \n"
+
+    val stringMultiLinea = """
+        Primera línea
+        Segunda
+        Tercera """
+
+    //concatenación o llenado de cadenas
+    val balance = 200
+    val mensaje = "El balance es de $balance"
+
+    //acceso a métodos de un objeto
+    val nombre = "Carlos"
+    val mensaje2 = "La primera letra del nombre es ${nombre.first()}"
 
     val b4: Byte = 1 // OK, literals are checked statically
     //val i: Int = b4 // ERROR

@@ -69,12 +69,28 @@ fun main(args : Array<String>) {
     println(devuelto)
 
     var collection: Array<String> = arrayOf("1","2","3")
+    println("Colección")
     for (item in collection) {
+        println(item)
+    }
+
+    //números del 0 al 8 step 2
+    val arrayNumeros = Array(5, { i -> i * 2 })
+    for (item in arrayNumeros) {
         println(item)
     }
     for (i in 1..3) {
         println(i)
     }
+
+    // Manejo de tuplas
+
+    val items = listOf(1, 22, 83, 4)
+
+    for ((indice, valor) in items.withIndex()) {
+        println("$indice con valor $valor")
+    }
+
     for (i in 6 downTo 0 step 2) {
         println(i)
     }
@@ -98,4 +114,16 @@ fun main(args : Array<String>) {
         println(x)
         x--
     } while (x >=0) // y is visible here!
+
+
+    try {
+        val entero:Int = 12;
+        val v:String = "Mi cadena molona";
+        v.toInt();
+    } catch(e:Exception) {
+        e.printStackTrace();
+    } finally {
+        println("Esto lo hacemos igualmente");
+    }
+    println("El siguiente código a la excepción se ejecuta")
 }

@@ -115,6 +115,8 @@ fun main(args : Array<String>) {
 
     })
     setFuncionCallBack( {i -> hazAlgo(i) } )
+    setFuncionCallBack {i -> hazAlgo(i) }
+
 
 }
 

@@ -1,6 +1,10 @@
 package com.cursosdedesarrollo.kotlin
 
-class Invoice {
+class Factura {
+}
+
+class Clase constructor(var nombre: String){
+
 }
 
 
@@ -41,10 +45,10 @@ class Contador{
     constructor(contador:Int =0){
         this.contador=contador
     }
-    public fun getContador():Int{
+    fun getContador():Int{
         return this.contador
     }
-    public fun inc(valor:Int=1){
+    fun inc(valor:Int=1){
         this.contador+=valor
     }
 }
@@ -56,7 +60,7 @@ data class Person2(var name: String="") {
     var age: Int = 0
 }
 
-open class Padre{
+open class Madre{
     var nombre: String? = null
 
     constructor(){
@@ -66,11 +70,11 @@ open class Padre{
         this.nombre=nombre
     }
     override fun toString():String{
-        return "Padre[nombre:"+this.nombre+"]"
+        return "Madre[nombre:"+this.nombre+"]"
     }
 }
 
-class Hija: Padre {
+class Hija: Madre {
     var herencia:String? = null
     constructor(){
         super.nombre=""
@@ -81,6 +85,24 @@ class Hija: Padre {
         this.herencia=""
     }
     constructor(nombre:String,herencia:String){
+        super.nombre=nombre
+        this.herencia=herencia
+    }
+    override fun toString():String{
+        return "Hija[herencia:"+this.herencia+",nombre:"+this.nombre+"]"
+    }
+}
+
+
+class Hija2: Madre  {
+    var herencia:String? = null
+    constructor() : super(""){
+        this.herencia=""
+    }
+    constructor(nombre:String) : super(nombre){
+        this.herencia=""
+    }
+    constructor(nombre:String,herencia:String) : super (nombre){
         super.nombre=nombre
         this.herencia=herencia
     }
@@ -128,27 +150,46 @@ class D : A, B {
     }
 }
 
+
+interface Base {
+    fun print()
+}
+
+class BaseImpl(val x: Int) : Base {
+    override fun print() { print(x) }
+}
+
+class Derived(b: Base) : Base by b
+
+
 fun main(args : Array<String>) {
-    var objeto=Invoice()
+    var objeto=Factura()
     println(objeto)
+
+    var clase=Clase("nombre")
+    println(clase.nombre)
+
     var persona=Persona()
     println(persona)
     persona=Persona("Pepe")
     println(persona)
     persona.nombre="Juan"
     println(persona)
+
+    println("Chicas")
     //getters y setters
     val maria = Girl()
     maria.actualAge = 15
     maria.age = 15
-    println("Maria: actual age = ${maria.actualAge}")
-    println("Maria: pretended age = ${maria.age}")
+    println("Maria: edad actual = ${maria.actualAge}")
+    println("Maria: edad fingida = ${maria.age}")
+
 
     val angela = Girl()
     angela.actualAge = 35
     angela.age = 35
-    println("Angela: actual age = ${angela.actualAge}")
-    println("Angela: pretended age = ${angela.age}")
+    println("Angela: edad actual = ${angela.actualAge}")
+    println("Angela: edad fingida = ${angela.age}")
 
     var contador=Contador(2)
     contador.inc(2)
@@ -172,7 +213,7 @@ fun main(args : Array<String>) {
     println(person2.name)
 
 
-    var padre=Padre("Pepe")
+    var padre=Madre("Pepe")
     println(padre)
     var hija=Hija()
     println(hija)
@@ -183,6 +224,9 @@ fun main(args : Array<String>) {
     var child=Child()
     child.foo()
     child.bar()
+
+    val b = BaseImpl(10)
+    Derived(b).print()
 }
 
 

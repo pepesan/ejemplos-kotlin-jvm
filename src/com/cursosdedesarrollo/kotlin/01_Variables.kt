@@ -22,7 +22,9 @@ fun main(args : Array<String>) {
     var edad = 12
     //edad = "12 años" // Error: no puede cambiar de tipo
 
-    val a: Int = 10000
+    val a: Int
+    a = 10000
+
     println(a === a) // Prints 'true'
     val boxedA: Int = a
     val anotherBoxedA: Int = a
@@ -48,21 +50,28 @@ fun main(args : Array<String>) {
     val cadena = "101"
     miInt = cadena.toInt()
     */
-    val miTrue = true
+    val miTrue: Boolean = true
     val miFalse = false
 
     val miString = "This is a String"
     val stringEscapada = "This is a string with new line \n"
 
     val stringMultiLinea = """
+
+
+
+
+
+        $miString
         Primera línea
         Segunda
         Tercera """
-
+    println("Cadena larga:"+stringMultiLinea)
     //concatenación o llenado de cadenas
     val balance = 200
     val mensaje = "El balance es de $balance"
-
+    //mensaje = "El balance es de \$balance"
+    println(mensaje)
     //acceso a métodos de un objeto
     val nombre = "Carlos"
     val mensaje2 = "La primera letra del nombre es ${nombre.first()}"
@@ -82,7 +91,14 @@ fun main(args : Array<String>) {
     val l = a3.length
     println(l)
     //accedo a un valor nullable intentando capturar el valor de la vairable si existe
+    //val l2 = b3?.length ?:-1
+    if(b3==null){
+        var l2=b3?.length
+    }else{
+        var l2=-1
+    }
     val l2 = b3?.length
+    //val l2 = b3!!.length
     println("Valor nullable:"+l2)
 
     var obj:String= "Hola"

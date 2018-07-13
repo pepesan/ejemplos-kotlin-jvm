@@ -27,4 +27,13 @@ fun main(args: Array<String>) {
     //inicialización a 0
     arrI= Array(5, {0})
 
+    for (item in arrI){
+        println(item)
+    }
+
+    val arrI2 = Array(4) {i -> i + 1.0}
+    for (item in arrI2){
+        println(item)
+    }
+
 }

@@ -9,13 +9,40 @@ fun double(x: Int): Int {
 }
 
 
+
 //paso de parámetros
 fun suma(x: Int, y:Int) :Int{
     return x+y
 }
 
+
+//paso de parámetros
+fun suma(x: Float=0F, y:Float =0F) :Float{
+    return x+y
+}
+//paso de parámetros
+fun suma(x: Float=0F, y:Double =0.0) :Any{
+    return x+y
+}
+
+fun devuelveNada():Unit{
+    println("Hago cosas")
+}
+
+//paso de parámetros
+/*
+fun suma(x: Float) :Float{
+    return x+2
+}
+*/
+
 //parámetros por defecto
 fun multi(x:Int =0,y:Int=0):Int{
+    return x*y
+}
+
+//parámetros por defecto
+fun multi(x:Float ,y:Float=0.0F):Float{
     return x*y
 }
 
@@ -27,9 +54,15 @@ fun devuelveSiQuieres(b:Boolean):Unit{
 }
 
 //función en una sola línea
-fun doble(x: Int): Int = x * 2
+/*
+fun doble(x: Int): Int{
+    return x*2
+}
+*/
+fun doble (x:Int):Int= x * 2
 
-fun doble2(x: Int) = x * 2
+
+fun doble2(x: Int) = x * 2 as Long
 
 //paso variable de argumentos
 fun <T> asList(vararg ts: T): List<T> {
@@ -76,6 +109,15 @@ fun main(args : Array<String>) {
     var x=double(2)
     println(x)
     x= suma(2,3)
+
+
+    var f1=1.0F
+    var f2=2.0F
+    var f3=3.0F
+    f3= suma(f1,f2)
+    println(f3)
+    //f3=suma(f1)
+    //f3=suma()
     println(x)
     x= multi()
     println(x)
@@ -117,6 +159,8 @@ fun main(args : Array<String>) {
     setFuncionCallBack( {i -> hazAlgo(i) } )
     setFuncionCallBack {i -> hazAlgo(i) }
 
+    val varDoble=doble(2)
+    println(varDoble)
 
 }
 

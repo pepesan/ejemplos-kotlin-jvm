@@ -45,8 +45,10 @@ fun main(args : Array<String>) {
         0, 1 -> println("x == 0 or x == 1")
         else -> println("otherwise")
     }
-
+    println("Parse Int")
+    println("X:"+x)
     var s="1"
+    x=2
     when (x) {
         parseInt(s) -> println("s encodes x")
         else -> println("s does not encode x")
@@ -90,7 +92,7 @@ fun main(args : Array<String>) {
     for ((indice, valor) in items.withIndex()) {
         println("$indice con valor $valor")
     }
-
+    //for ( var i = 6; i>=0 ; i-2){
     for (i in 6 downTo 0 step 2) {
         println(i)
     }
@@ -98,9 +100,11 @@ fun main(args : Array<String>) {
     for (i in collection.indices) {
         println(collection[i])
     }
-    loop@ for (i in 1..10) {
-        for (j in 1..10) {
-            if (i>5) break@loop
+    bucle1@ for (i in 1..10) {
+        bucle2@for (j in 1..10) {
+            println("i: $i, j:$j : ${i+j}")
+            if (i>5 && j>4) break@bucle1
+
         }
     }
 
@@ -120,7 +124,14 @@ fun main(args : Array<String>) {
         val entero:Int = 12;
         val v:String = "Mi cadena molona";
         v.toInt();
-    } catch(e:Exception) {
+    }catch(e:NullPointerException) {
+        println("Lo que hago si peta por null")
+        e.printStackTrace();
+    }catch(e:NumberFormatException) {
+        println("Lo que hago si peta por fallo de conversión")
+        e.printStackTrace();
+    }catch(e:Exception) {
+        println("Lo que hago si peta por que sí")
         e.printStackTrace();
     } finally {
         println("Esto lo hacemos igualmente");

@@ -26,7 +26,7 @@ class Persona {
 
 class Girl {
     var age: Int = 0
-        get() = field
+        //get() = field
         set(value) {
             field = if (value < 18)
                 18
@@ -103,7 +103,6 @@ class Hija2: Madre  {
         this.herencia=""
     }
     constructor(nombre:String,herencia:String) : super (nombre){
-        super.nombre=nombre
         this.herencia=herencia
     }
     override fun toString():String{
@@ -168,7 +167,6 @@ fun main(args : Array<String>) {
 
     var clase=Clase("nombre")
     println(clase.nombre)
-
     var persona=Persona()
     println(persona)
     persona=Persona("Pepe")

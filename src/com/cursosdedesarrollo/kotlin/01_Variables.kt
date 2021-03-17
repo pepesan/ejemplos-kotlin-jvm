@@ -86,6 +86,7 @@ fun main(args : Array<String>) {
     //declaro una variable nullable
     var b3: String? = "abc"
     b3 = null // ok
+    println("b3 vale ${b3?.length}")
 
     //intento acceder a un valor sabiendo que debe existir
     val l = a3.length
@@ -100,6 +101,8 @@ fun main(args : Array<String>) {
     val l2 = b3?.length
     //val l2 = b3!!.length
     println("Valor nullable:"+l2)
+
+
 
     var obj:String= "Hola"
     if (obj is String) {
@@ -121,5 +124,14 @@ fun main(args : Array<String>) {
         print(x.length) // x is automatically cast to String
     }
     */
+
+    println(b3?.length)
+    b3=null
+    if (b3 != null) {
+        println(b3.length)
+    }
+    println(b3!!.length)
+
+    val b5 = b3
 
 }

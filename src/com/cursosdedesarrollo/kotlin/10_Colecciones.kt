@@ -1,6 +1,7 @@
 package com.cursosdedesarrollo.kotlin
 
 import kotlin.math.cos
+import java.util.HashSet
 
 
 // Ejemplo de programación funcional
@@ -64,7 +65,7 @@ fun main(args : Array<String>) {
     var intSet: Set<Int> = setOf(1, 3, 4)
 
     // HashSet es mutable
-    val intsHashSet: java.util.HashSet<Int> = hashSetOf(1, 2, 6, 3)
+    val intsHashSet = hashSetOf(1, 2, 6, 3)
     intsHashSet.add(5)
     intsHashSet.remove(1)
 
